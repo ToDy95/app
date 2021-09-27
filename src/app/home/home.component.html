@@ -1,0 +1,17 @@
+
+
+
+<div class="content number" fxFlexFill *ngFor="let number of numbers" >
+
+    <mat-card class="example-card" id=`{{number}}` fxLayout ="column" >
+        <mat-card-title align="center">Shiba Inu</mat-card-title>
+        <mat-card-content align="center"> 
+          <p>This card indeterminates progress bar.</p>
+        </mat-card-content>
+        <mat-card-actions align="center">
+          <button mat-button (click)="GoToDetails()">CheckDetails</button>
+        
+        </mat-card-actions>
+    </mat-card>
+
+</div>
