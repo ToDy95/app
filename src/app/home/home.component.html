@@ -1,17 +1,16 @@
+<h1>PRODUCTS</h1>
+<hr>
+<table id="products">
+  <tr>
+    <th *ngFor="let column of headers">
+    {{column}}
+    </th>
+  </tr>
+  <tr *ngFor="let row of rows">
+    <td *ngFor="let column of headers">
+    
+      {{row[column]}}
 
-
-
-<div class="content number" fxFlexFill *ngFor="let number of numbers" >
-
-    <mat-card class="example-card" id=`{{number}}` fxLayout ="column" >
-        <mat-card-title align="center">Shiba Inu</mat-card-title>
-        <mat-card-content align="center"> 
-          <p>This card indeterminates progress bar.</p>
-        </mat-card-content>
-        <mat-card-actions align="center">
-          <button mat-button (click)="GoToDetails()">CheckDetails</button>
-        
-        </mat-card-actions>
-    </mat-card>
-
-</div>
+    </td>
+  </tr>
+</table>

@@ -1,26 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Products } from '../Products';
-import { RestService } from '../rest.service';
-
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
-})
-export class HomeComponent  {
-  // , private rs : RestService
-  constructor(private router:Router) {
- 
-   }
-
-public GoToDetails(){
-
-  this.router.navigate([`details`])
-}
-
-headers = ["id","name","model","purchaseDate"];
-rows = [
+{
+    "Products" : [
         {
             "id" : "1",
             "name" : "Washing machine",
@@ -203,22 +182,3 @@ rows = [
         }
     ]
 }
- 
-
-// products : Products[] = []
-
-// ngOnInit() : void {
-
-  
-// this.rs.getProducts().subscribe(
- 
-//   (response)=>{
-//     this.products = response
-//   },
-//   (error)=>{
-//     console.log("ERRRRRR")
-//   }
-// )
-// }
-
-// }

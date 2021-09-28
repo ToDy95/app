@@ -1,1 +1,17 @@
-<p>card-details works!</p>
+<h1>PRODUCTS</h1>
+<hr>
+<table id="products">
+  <tr>
+    <th *ngFor="let column of headers">
+    {{column}}
+    </th>
+  </tr>
+  <tr *ngFor="let row of rows">
+    <td *ngFor="let column of headers">
+        
+    {{row['details']}}
+     
+
+    </td>
+  </tr>
+</table>
