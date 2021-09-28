@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-card-details',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
   headers = ["powers","size","color","form","weight"];
+  private id;
+row;
   
 rows = [
         {
@@ -193,6 +196,10 @@ rows = [
         }
     ]
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(p => {
+        this.id = p["id"];
+        this.row = this.rows.filter(x => x.id == this.id)[0];
+    });
   }
 
 }

@@ -2,16 +2,13 @@
 <hr>
 <table id="products">
   <tr>
-    <th *ngFor="let column of headers">
-    {{column}}
+    <th *ngFor="let column of row.details[0] | keyvalue">
+    {{column.key}}
     </th>
   </tr>
-  <tr *ngFor="let row of rows">
-    <td *ngFor="let column of headers">
-        
-    {{row['details']}}
-     
-
+  <tr>
+    <td *ngFor="let column of row.details[0] | keyvalue"> 
+      {{column.value}}
     </td>
   </tr>
 </table>

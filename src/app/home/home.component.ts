@@ -19,6 +19,10 @@ public GoToDetails(){
   this.router.navigate([`details`])
 }
 
+private detailItem(id){
+    console.log(id);
+}
+
 headers = ["id","name","model","purchaseDate"];
 rows = [
         {

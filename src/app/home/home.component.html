@@ -6,11 +6,15 @@
     {{column}}
     </th>
   </tr>
+  
   <tr *ngFor="let row of rows">
-    <td *ngFor="let column of headers">
-    
-      {{row[column]}}
+    <a [routerLink]="['/details',row.id]" (click)="detailItem(row)" href="#">
+      <td *ngFor="let column of headers">
+      
+        
+        {{row[column]}}
 
-    </td>
+      </td>
+    </a>
   </tr>
 </table>
