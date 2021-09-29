@@ -17,13 +17,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
-
+import {MatTableModule} from '@angular/material/table';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ScrollingModule
+    ScrollingModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

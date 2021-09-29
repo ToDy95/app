@@ -1,14 +1,26 @@
-<h1>PRODUCTS</h1>
-<hr>
-<table id="products">
-  <tr>
-    <th *ngFor="let column of row.details[0] | keyvalue">
-    {{column.key}}
-    </th>
-  </tr>
-  <tr>
-    <td *ngFor="let column of row.details[0] | keyvalue"> 
-      {{column.value}}
-    </td>
-  </tr>
-</table>
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="75">
+    <mat-toolbar>
+      <span fxLayoutAlign="center center" fxFlexFill *ngFor="let row of rows">Details</span>
+    </mat-toolbar>
+    <mat-card-content>
+
+      <table id="products">
+        <tr>
+          <th *ngFor="let column of row.details[0] | keyvalue">
+            <span> {{column.key}} </span>
+          </th>
+        </tr>
+        <tr>
+          <!-- {{row.details[0].powers}} -->
+          <td *ngFor="let column of row.details[0] | keyvalue">
+            <span> {{column.value}} </span>
+          </td>
+        </tr>
+      </table>
+
+    </mat-card-content>
+
+
+  </mat-card>
+</div>

@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
         if (result) {
           console.log(result + "login Success")
           sessionStorage.setItem('UserKey', result.token);
+          
           let UserKeySuccess = sessionStorage.getItem("UserKey");
             this.router.navigate([`dashboard`])
         } else {

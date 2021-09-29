@@ -11,9 +11,23 @@ import { RestService } from '../rest.service';
 export class HomeComponent  {
   // , private rs : RestService
   constructor(private router:Router) {
- 
+    let UserKeySuccess = sessionStorage.getItem("UserKey");
+     let dashboardLink = window.location.href;
+
+     if(dashboardLink == 'http://localhost:4200/dashboard' && !UserKeySuccess) {
+       this.router.navigate([``])
+     }else{
+       console.log(UserKeySuccess)
+     }
+
+   }
+   gridColumns = 3;
+
+   toggleGridColumns() {
+     this.gridColumns = this.gridColumns === 3 ? 4 : 3;
    }
 
+   
 public GoToDetails(){
 
   this.router.navigate([`details`])
@@ -22,7 +36,32 @@ public GoToDetails(){
 private detailItem(id){
     console.log(id);
 }
+order;
+sortData() {
+  if(this.order) {
+    let newObj = this.rows.sort((a, b) => a[0].id - b[0].id);
+    this.rows = newObj
+  }else{
+    let newObj = this.rows.sort((a, b) => b[0].id - a[0].id);
+  this.rows = newObj
+  }
+  this.order = !this.order
+}
+isDesc;
+sortName(prop){
+  this.isDesc = !this.isDesc
+  let direction = this.isDesc ? 1: -1;
 
+  this.rows.sort(function(a, b){
+    if(a[prop] < b[prop]){
+      return -1 * direction;
+    }else if(a[prop] > b[prop]){
+      return 1 * direction;
+    }else{
+      return 0;
+    }
+  });
+}
 headers = ["id","name","model","purchaseDate"];
 rows = [
         {

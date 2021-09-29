@@ -1,0 +1,25 @@
+#products {
+    border: 2px black solid;
+    background-color: rgb(218, 218, 218);
+    width: 100%;
+    min-width: 100%;
+  }
+#products th {
+    border: 1px black solid;
+}
+
+#products th span {
+    font-size:  24px;
+    text-transform: uppercase;
+}
+
+#products td span {
+    font-size:  20px;
+    text-transform: capitalize;;
+    
+}
+
+#products td  {
+    text-align: center;
+    
+}
