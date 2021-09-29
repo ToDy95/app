@@ -1,36 +1,43 @@
-<div fxLayoutAlign ="center center" fxFlexFill>
-    <mat-card fxFlex = "25" class="customCss">
-        <mat-toolbar>
-            <span fxLayoutAlign ="center center" fxFlexFill>REGISTER</span>
-  <span class="example-spacer"></span>
-        </mat-toolbar>
-    <form  fxLayoutAlign= "stretch" fxLayout ="column" class="loginForm" >
-        <mat-form-field >
-            <mat-label>First name</mat-label>
-            <input matInput placeholder="First name" formControlName="fName" >
-          </mat-form-field>
-          <mat-form-field >
-            <mat-label>Last Name</mat-label>
-            <input matInput placeholder="Last Name" formControlName="lName" >
-          </mat-form-field>
-        <mat-form-field >
-          <mat-label>Your E-mail</mat-label>
-          <input matInput placeholder="E-mail" formControlName="email" >
-        </mat-form-field>
-      
-        <mat-form-field >
-            <mat-label>Password </mat-label>
-            <input matInput type="password" placeholder="Password" formControlName="password" >
-            
-        </mat-form-field>  
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="25" class="customCss">
+    <mat-toolbar>
+      <span fxLayoutAlign="center center" fxFlexFill>REGISTER</span>
+      <span class="example-spacer"></span>
+    </mat-toolbar>
+    <form fxLayoutAlign="stretch" fxLayout="column" class="loginForm" (ngSubmit)="onSubmit()"
+      [formGroup]="reactiveForm">
+      <mat-form-field>
+        <mat-label>First name</mat-label>
+        <input matInput placeholder="First name" formControlName="fName">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" formControlName="lName">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Your E-mail</mat-label>
+        <input matInput placeholder="E-mail" name="email" formControlName="email">
+      </mat-form-field>
+      <div class="err" *ngIf="f.email.errors.required && f.email.errors">
+        Email is Required!
+      </div>
+      <mat-form-field>
+        <mat-label>Password </mat-label>
+        <input matInput type="password" placeholder="Password" name="password" formControlName="password">
 
-        <mat-form-field >
-            <mat-label>Password Match</mat-label>
-            <input matInput type="password" placeholder="Password Match" formControlName="passwordM" >
-            
-        </mat-form-field>
-     
-          <button mat-button type="submit">Register</button>
-      </form>
-    </mat-card>
+      </mat-form-field>
+      <div class="err" *ngIf="f.password.errors.required && f.password.errors">
+        Password is Required!
+      </div>
+      <mat-form-field>
+        <mat-label>Password Match</mat-label>
+        <input matInput type="password" placeholder="Password Match" name="passwordM" formControlName="passwordM">
+
+      </mat-form-field>
+      <div class="err" *ngIf="f.passwordM.errors.required && f.passwordM.errors">
+        Password Match is Required!
+      </div>
+      <button mat-button type="submit">Register</button>
+    </form>
+  </mat-card>
 </div>
