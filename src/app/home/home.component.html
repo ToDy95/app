@@ -1,30 +1,14 @@
-<!-- <table id="products">
-  <tr>
-    <th *ngFor="let column of headers">
-    {{column}}
-    </th>
-  </tr>
-  
-  <tr *ngFor="let row of rows">
-    <a [routerLink]="['/details',row.id]" (click)="detailItem(row)" href="#">
-      <td *ngFor="let column of headers">
-      
-        
-        {{row[column]}}
 
-      </td>
-    </a>
-  </tr>
-</table> -->
-
-<mat-toolbar color="primary">
-  <span>Card view demo</span>
-  <button mat-button (click)="toggleGridColumns()" fxHide.lt-md>
-    <span *ngIf="gridColumns === 4">Three Columns</span>
-    <span *ngIf="gridColumns === 3">Four Columns</span>
-  </button>
-</mat-toolbar>
 <div class="content">
+  <mat-toolbar color="primary">
+    <span>Card view demo</span>
+    <button mat-button (click)="toggleGridColumns()" fxHide.lt-md>
+      <span *ngIf="gridColumns === 4">Three Columns</span>
+      <span *ngIf="gridColumns === 3">Four Columns</span>
+    </button>
+  </mat-toolbar>
+  <hr>
+  <div class="srcRes" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="5" (scrolled)="onScroll()">
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
 
 
@@ -51,4 +35,13 @@
 
 
   </div>
+</div>
+
+<div class="row pb-5">
+  <div class="col-md-12 p-5">
+    <ngx-spinner bdOpacity = 0.9 bdColor = "" size="default" color="black" type = "ball-pulse-sync" [fullScreen]="false"></ngx-spinner>
+ 
+ </div>
+ </div>
+
 </div>

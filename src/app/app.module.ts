@@ -19,6 +19,8 @@ import { CardDetailsComponent } from './card-details/card-details.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatTableModule} from '@angular/material/table';
 import { RegisterComponent } from './register/register.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxSpinnerModule } from 'ngx-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,9 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     ReactiveFormsModule,
     ScrollingModule,
-    MatTableModule
+    MatTableModule,
+    InfiniteScrollModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
