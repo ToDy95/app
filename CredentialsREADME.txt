@@ -11,11 +11,12 @@ Portul e default
 
 localhost http://localhost:4200/
 La logare in session storage am un token.
+Nu poti intra din link daca nu ai tokenu .. decat pe login si /register
+La register ai required pe email si pass , ambele
+homepage e mobile frendly nu-s fan design daca nu copiez ceva :))
+filtrare dupa nume pe cartonasi (apesi pe numele lor
+afisare pe 3 sau 4 randuri
+pagina de detail la apasare buton detail + route pt fiecare primele 2 cartonase au date diferite .. ca sa vezi de test 
 
-Ramas de facut
-
--conditie daca nu are token sa faca redirect catre login
--infinit scroll 'ang material' + carduri cu flex
--page details cu 
-un card pe centru mai mare 70% din ecran 
-sus Nume card si detaliile pe 2 coloane 
+la infinit scroll ar mai trebui lucrat .. e aproape gata dar ar trb mai multe date sa am unde scrola 
++ n-am facut access rute din link ...am uiat 
